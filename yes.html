@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Awwww</title>
+  <style>
+    .image-container img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      max-height: 80vh;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="image-container">
+      <img src="yes.png" alt="Yes Image">
+    </div>
+  </div>
+  <!-- Add this updated JavaScript code to the existing script in your HTML file -->
+<script>
+  // Create stars
+  for (let i = 0; i < 50; i++) {
+    createStar();
+  }
+
+  function createStar() {
+    const star = document.createElement('div');
+    star.classList.add('star');
+    star.style.left = `${Math.random() * window.innerWidth}px`;
+    star.style.top = `${Math.random() * window.innerHeight}px`;
+    document.body.appendChild(star);
+  }
+
+  // Create fireworks only on corners
+  createFirework(10, 10); // top-left
+  createFirework(window.innerWidth - 20, 10); // top-right
+  createFirework(10, window.innerHeight - 20); // bottom-left
+  createFirework(window.innerWidth - 20, window.innerHeight - 20); // bottom-right
+
+  function createFirework(x, y) {
+    const firework = document.createElement('div');
+    firework.classList.add('firework');
+    firework.style.left = `${x}px`;
+    firework.style.top = `${y}px`;
+    document.body.appendChild(firework);
+  }
+</script>
+
+</body>
+</html>
